@@ -507,11 +507,11 @@ class SWEETCF_Display {
 
 		if ($open_div) { $string .= '</div><div ' . self::get_this_css('clear_style') . '></div>' . "\n"; }
 		
-		wp_enqueue_style('sweetcf-styles-frontend', plugins_url('sweetcontact/includes/sweetcf-styles.css'), false, SWCF_BUILD);
+		wp_enqueue_style('sweetcf-styles-frontend', plugins_url('contact-form-sweet/includes/sweetcf-styles.css'), false, SWCF_BUILD);
 		if (self::$form_options['design_type'] == '2') { // Vertical Design
-			wp_enqueue_style('sweetcf-styles-vertical', plugins_url('sweetcontact/includes/sweetcf-styles-vertical.css'), false, SWCF_BUILD);
+			wp_enqueue_style('sweetcf-styles-vertical', plugins_url('contact-form-sweet/includes/sweetcf-styles-vertical.css'), false, SWCF_BUILD);
 		} else {
-			wp_enqueue_style('sweetcf-styles-horizontal', plugins_url('sweetcontact/includes/sweetcf-styles-horizontal.css'), false, SWCF_BUILD);
+			wp_enqueue_style('sweetcf-styles-horizontal', plugins_url('contact-form-sweet/includes/sweetcf-styles-horizontal.css'), false, SWCF_BUILD);
 		}
 		if (self::is_captcha_enabled(self::$form_id_num)) { $string .= self::display_captcha() . "\n"; }
 
@@ -1586,7 +1586,7 @@ class SWEETCF_Display {
 		if (SWEETCF_Process::$redirect_enable == 'true') {
 			$ctf_thank_you .= '
 		<br />
-		<img id="swcf_redirect_image' . self::$form_id_num . '" src="' . plugins_url('sweetcontact/includes/loading.gif') . '" alt="' . esc_attr(__('Redirecting', 'sweetcontact')) . '" />' .
+		<img id="swcf_redirect_image' . self::$form_id_num . '" src="' . plugins_url('contact-form-sweet/includes/loading.gif') . '" alt="' . esc_attr(__('Redirecting', 'sweetcontact')) . '" />' .
 				'<span id="swcf_redirect_word' . self::$form_id_num . '">' . __('Redirecting', 'sweetcontact') . '</span>';
 		} else {
 			if (self::$form_options['print_form_enable'] == 'true') {
