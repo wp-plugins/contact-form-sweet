@@ -2,7 +2,7 @@
 Contributors: Sweet
 Author URI: 
 Donate link: 
-Tags: attachment, contact, contatc, conact, cnotact, contact button, contact form, contact form plugin, contact me, contacts, contacts form plugin, copy, feedback, feedback form, form, insert the shortcode, post feedback, request, send, send copy, send messages, shortcode, text, web-page feedback
+Tags: contact form, email submit form, message form, email subscription, attachment, contact, contatc, conact, cnotact, contact button, contact form plugin, contact me, contacts, contacts form plugin, copy, feedback, feedback form, form, insert the shortcode, post feedback, request, send, send copy, send messages, shortcode, text, web-page feedback
 Requires at least: 3.1
 Tested up to: 4.2.2
 Stable tag: trunk
