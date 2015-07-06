@@ -1,0 +1,36 @@
+/*
+	Styles for vertical form display.
+*/
+.sweetontact-form-fields-wrapper input,
+.sweetontact-form-fields-wrapper textarea
+{
+	max-width: 350px;
+	width: 350px !important;
+}
+/*
+div.sweetcaptcha {
+	border: 1px solid #e2e2e2;
+	max-width: 228px;
+	position: relative;
+}
+div.sweetcaptcha .reset {
+	padding-bottom: 8px;
+}
+div.sweetcaptcha span.holder {
+	float: none;
+	width: auto;
+	background-position: center center !important;
+}
+div.sweetcaptcha ul {
+	display: block;
+	position: relative;
+}
+div.sweetcaptcha ul li img {
+}
+div.sweetcaptcha ul li {
+}
+.sweetontact-form-fields-wrapper {
+	
+}
+*/
+
