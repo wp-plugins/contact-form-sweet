@@ -2,7 +2,7 @@
 Contributors: Sweet
 Author URI: 
 Donate link: 
-Tags: contact form, email submit form, message form, email subscription, attachment, contact, contatc, conact, cnotact, contact button, contact form plugin, contact me, contacts, contacts form plugin, copy, feedback, feedback form, form, insert the shortcode, post feedback, request, send, send copy, send messages, shortcode, text, web-page feedback
+Tags: admin, advanced form, Attachment, best contact form plugin, buddypress, category, cnotact, conact, contact, contact button, contact form, contact form builder, Contact Form Builder with recaptcha, contact form manager, contact form plugin, contact form with google map, contact forms, contact forms plugin, contact manager, contact me, contact us, contact us form, contacts, contacts form plugin, contatc, copy, custom form, email, email form, feedback, feedback form, feedback forms, form, forms, forms plugin, insert the shortcode, multiple contact forms, post feedback, request, send, send copy, send messages, shortcode, text, web form, web-page feedback, wordpress contact form
 Requires at least: 3.1
 Tested up to: 4.2.2
 Stable tag: trunk
