@@ -58,13 +58,39 @@ Please feel free to contact us at support support@sweetcontactform.com
 
 == Frequently Asked Questions ==
 
+= How fast can I setup a Contact Form with this plguin =
+
+real fast! follow this 4 steps and your Contact Form is ready:
+
+* Install the Contact Form
+
+* Activate the Contact Form
+
+* Go to the contact form settings and press "save" at the bottom.
+
+* Copy this: [sweetcontact-form form='1'] and paste into a post or a page.
+
+That's it, your Contact Form is ready ;-)
+
 = Where can I find the settings to adjust the Contact Form plugin work after activation? =
 
 In the WordPress dashboard menu you can find the "sweetContact" menu to the settings page.
 
+= Can i choose between horizontal and vertical Contact Form layout? =
+
+Sure, its simple, see step 4 and the Contact form settings page.
+
 = How can I add Contact Form to my website? =
 
-You should put the shortcode [sweetcontact-form form='1'] into a page or a post.
+You should copy the Contact Form shortcode [sweetcontact-form form='1'] and paste it into a page or a post.
+
+= Would this Contact Form will work on mobile devices? iPhone or Android based devices? = 
+
+Yes, this Contact Form is working on all mobile devices.
+
+= Where is the Contact Form data going after the user press "Submit" ? =
+
+On step 3 in the Contact Form settings page, you can enter the desire email where you will get the Contact Form submission
 
 
 == Screenshots ==
