@@ -220,7 +220,7 @@ class SWEETCF_Options {
 						if ( in_array($i, array(2,6)) ) { ?>
 							<p class="submit"><input id="submit<?php echo $i; ?>" class="button-primary" type="submit" value="<?php esc_attr_e('Save Changes', 'sweetcontact'); ?>" onclick="document.pressed = this.value" name="submit" /><br />
 							<?php _e('*By pressing the "Save Changes" button you agree to the', 'sweetcontact')?> 
-							<a href="http://sweetcaptcha.com/terms" target="_blank" style="font-weight: bold"><?php _e('terms', 'sweetcontact')?></a> 
+							<a href="http://sweetcaptcha.com/terms" target="_blank" style="font-weight: bold"><?php _e('terms & conditions', 'sweetcontact')?></a> 
 							</p>
 						<?php }
 						if ( $i == 6 ) {?>
