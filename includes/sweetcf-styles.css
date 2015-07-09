@@ -1,0 +1,12 @@
+/*
+	Styles for contact form display.
+*/
+/* these styles also need to be copied to styles-admin.css */
+/*.fscf-right { clear:right; float:right;}*/
+.swcf-field-left {clear:left; float:left; margin-right:10px;}
+.swcf-field-follow {float:left; padding-left:10px;}
+.swcf-clear {clear:both;}
+/* div.fscf-container label {color:#333333;} */
+.sweetontact-form-fields-wrapper {
+	position: relative;
+}
