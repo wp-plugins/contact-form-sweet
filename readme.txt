@@ -90,6 +90,10 @@ Yes, this Contact Form is working on all mobile devices.
 
 On step 3 in the Contact Form settings page, you can enter the desire email where you will get the Contact Form submission
 
+= I have a problem with setting up the Contact Form, what to do? = 
+
+Drop us a mail at support@sweetcontactform.com 
+
 
 == Screenshots ==
 
