@@ -104,5 +104,8 @@ Drop us a mail at support@sweetcontactform.com
 
 == Changelog ==
 
+= V4.1. =
+* Bug : some links in the settings page-fixed.
+
 = V4.1 - 06.07.2015 =
 * Update : first time we publish.(good luck!)
