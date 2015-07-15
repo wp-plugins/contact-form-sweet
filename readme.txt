@@ -20,8 +20,6 @@ Contact Form by Sweet is a Simple form builder wordpress plugin, create contact 
 
 https://www.youtube.com/watch?v=06TyKImr8MQ
 
-...
-
 Features:
 --------
 * Full mobile support! Tested for iPhones, iPads and Android devices
