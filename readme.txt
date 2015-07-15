@@ -10,8 +10,16 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Contact Form by Sweet is a Simple form builder wordpress plugin, create contact forms in seconds.
 
 == Description ==
-Contact Form By Sweet is a simple Contact Form Plugin, so easy you just have to  activate the plugin and insert the shortcode [sweetcontact-form form='1'] into a page or a post.
-we are going to add some cool feature to this Contact Form plugin real soon.
+**Contact Form** By Sweet is a simple 
+
+**Contact Form** By Sweet Plugin, so easy you just have to activate the plugin and insert the shortcode [sweetcontact-form form='1'] into a page or a post.
+
+**Contact Form** By Sweet is an ultimate WordPress Plugin, we are going to add some cool feature to this Contact Form plugin real soon.
+
+**Contact Form By Sweet** is so simple, here is a 1:48 min video step by step on how to setup your first Contact Form plugin
+
+https://youtu.be/06TyKImr8MQ
+
 ...
 
 Features:
