@@ -18,7 +18,7 @@ Contact Form by Sweet is a Simple form builder wordpress plugin, create contact 
 
 **Contact Form By Sweet** is so simple, here is a 1:48 min video step by step on how to setup your first Contact Form plugin
 
-https://youtu.be/06TyKImr8MQ
+https://www.youtube.com/watch?v=06TyKImr8MQ
 
 ...
 
