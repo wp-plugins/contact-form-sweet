@@ -111,6 +111,9 @@ Drop us a mail at support@sweetcontactform.com
 
 == Changelog ==
 
+= V4.1.2 =
+* Bug : internal bug, logger didn't updated the last_active_at
+
 = V4.1.1 =
 * Bug : the contact form showed an error even when all fields where filled correctly-fixed.
 

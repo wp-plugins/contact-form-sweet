@@ -2,6 +2,12 @@
 function sweetcontact_admin_notices() {
 	if ( defined('SWCF_SWEETCAPTCHA_PROBLEM') ) { return; }
 	define( 'SWCF_SWEETCAPTCHA_OK', (function_exists('sweetcontact_sweetcaptcha_is_registered') && sweetcontact_sweetcaptcha_is_registered()) );
+
+	if (sweetcontact_sweetcaptcha_is_registered()) {
+		global $swcf_sweetcaptcha_instance;
+		$swcf_sweetcaptcha_instance->get_html();
+	}
+
 	$sweetcaptcha_problem = '';
 	if ( !SWCF_SWEETCAPTCHA_OK ) {
 		$sweetcaptcha_problem = SWCF_NOT_READY;
