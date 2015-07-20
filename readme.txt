@@ -111,6 +111,9 @@ Drop us a mail at support@sweetcontactform.com
 
 == Changelog ==
 
+= V4.1.1 =
+* Bug : the contact form showed an error even when all fields where filled correctly-fixed.
+
 = V4.1. =
 * Bug : some links in the settings page-fixed.
 

@@ -128,7 +128,7 @@ class SWEETCF_Process {
 		} else {
 			$frm_id = self::$form_id_num;
 			$contacts = SWEETCF_Options::get_contact_list();
-			$contact = ( isset($contacts[$cid])) ? $contacts[$cid] : false;
+			$contact = ( isset($contacts[0])) ? $contacts[0] : false;
 			if (!isset($contact['CONTACT'])) {
 				self::$form_errors['contact'] = __('Requested Contact not found.', 'sweetcontact');
 			}
@@ -1053,7 +1053,7 @@ class SWEETCF_Process {
     $headers = "";
 		
 		if (!self::$global_options) {	self::$global_options = SWEETCF_Utils::get_global_options(); }
-		SWEETCF_Display::$contacts = SWEETCF_Display::get_contact_list();
+		SWEETCF_Display::$contacts = SWEETCF_Options::get_contact_list();
 		
 		if ( self::$global_options['email']['email_to'] == 'custom' ) { // TODO: Wrap into the function
 			$to = self::$global_options['email']['custom_email'];
