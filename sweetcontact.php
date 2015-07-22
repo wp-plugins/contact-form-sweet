@@ -24,6 +24,7 @@ define( 'SWCF_FILE', __FILE__ );	               // /path/to/wp-content/plugins/s
 define( 'SWCF_PATH', plugin_dir_path(__FILE__) );  // /path/to/wp-content/plugins/sweetcontact/
 define( 'SWCF_URL', plugin_dir_url( __FILE__ ) );  // http://www.yoursite.com/wp-content/plugins/sweetcontact/
 define( 'SWCF_INCLUDES', SWCF_URL . 'includes' );  
+define( 'SWCF_LANGUAGES', dirname( plugin_basename( __FILE__ ) ) . '/languages' ); 
 define( 'SWCF_ADMIN_URL', admin_url( 'plugins.php?page=sweetcontact')); // TODO: We need this ?
 define( 'SWCF_PLUGIN_NAME', 'sweetContact Form' ); // Use this where possible !
 define( 'SWCF_CAPTCHA_PATH', SWCF_PATH . 'captcha');
@@ -51,6 +52,8 @@ require_once SWCF_PATH . 'includes/class-sweetcf-options.php';
 if ( is_admin() ) {
 	require_once SWCF_PATH . 'includes/class-sweetcf-action.php';	
 	require_once( ABSPATH . "wp-includes/pluggable.php" );
+} else {
+	add_action('wp_enqueue_scripts', 'sweetcontact_init', 1);
 }
 
 // Initialize plugin settings and hooks
@@ -87,4 +90,14 @@ function sweetcontact_plugins_loaded() {
 	 */
 }
 
+/**
+ * Init
+ */
+function sweetcontact_init() {
+	require_once ABSPATH . 'wp-admin/includes/plugin.php';
+	$plugin_info = get_plugin_data(__FILE__);
+	$ver = $plugin_info["Version"];
+	$app_id = get_option(SWCF_SWEETCAPTCHA_APP_ID) ? get_option(SWCF_SWEETCAPTCHA_APP_ID) : '1';
+	wp_enqueue_script('fullcontactform-csrf', 'https://www.sweetcaptcha.com/api/v2/apps/csrf/' . $app_id, array(), $ver, true);
+}
 ?>

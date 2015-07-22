@@ -52,7 +52,7 @@ class SWEETCF_Utils {
 
 	static function swcf_init_languages() {
 		if (function_exists('load_plugin_textdomain')) {
-			load_plugin_textdomain('sweetcontact', false, 'contact-form-sweet/languages');
+			load_plugin_textdomain('sweetcontact', false, SWCF_LANGUAGES);
 		}
 	}
 
@@ -70,8 +70,8 @@ class SWEETCF_Utils {
 		// Add jquery and css for tabs on options page only for this plugin
 		if (strpos($hook, 'sweetcontact') > 0) {
 			wp_enqueue_script('thickbox'); wp_enqueue_style('thickbox'); wp_enqueue_script('jquery-ui-core'); wp_enqueue_script('jquery-ui-tabs'); wp_enqueue_script('jquery-ui-sortable');
-			wp_enqueue_script('sweetcf_scripts_admin', plugins_url('contact-form-sweet/includes/sweetcf-scripts-admin.js'), false, SWCF_BUILD);
-			wp_enqueue_script('sweetcf_scripts', plugins_url('contact-form-sweet/includes/sweetcf-scripts.js'), false, SWCF_BUILD);
+			wp_enqueue_script('sweetcf_scripts_admin', SWCF_INCLUDES . '/sweetcf-scripts-admin.js', false, SWCF_BUILD);
+			wp_enqueue_script('sweetcf_scripts', SWCF_INCLUDES . '/sweetcf-scripts.js', false, SWCF_BUILD);
 
 			$translation_array = array(
 				'save_changes' => __('Save Changes', 'sweetcontact'),
@@ -86,18 +86,18 @@ class SWEETCF_Utils {
 				'delete_form' => __('Delete Form', 'sweetcontact'),
 			);
 			wp_localize_script('sweetcf_scripts_admin', 'sweetcf_transl', $translation_array);
-			wp_enqueue_style('sweetcf-styles-admin', plugins_url('contact-form-sweet/includes/sweetcf-styles-admin.css'), false, SWCF_BUILD);
+			wp_enqueue_style('sweetcf-styles-admin', SWCF_INCLUDES . '/sweetcf-styles-admin.css', false, SWCF_BUILD);
 		}
 	}
 
 	static function enqueue_frontend_scripts($hook) {
-		wp_enqueue_style('sweetcf-styles-frontend', plugins_url('contact-form-sweet/includes/sweetcf-styles.css'), false, SWCF_BUILD);
+		wp_enqueue_style('sweetcf-styles-frontend', SWCF_INCLUDES . '/sweetcf-styles.css', false, SWCF_BUILD);
 	}
 
 	static function add_date_js() {
 		// add js for forms with date fields
-		//wp_enqueue_style( 'swcf_date_style', plugins_url( 'contact-form-sweet/date/ctf_epoch_styles.css' ), false, SWCF_BUILD );
-		wp_enqueue_script('swcf_date_js', plugins_url('contact-form-sweet/date/ctf_epoch_classes.js'), false, SWCF_BUILD);
+		//wp_enqueue_style( 'swcf_date_style', SWCF_INCLUDES . '/ctf_epoch_styles.css', false, SWCF_BUILD );
+		wp_enqueue_script('swcf_date_js', SWCF_INCLUDES . '/ctf_epoch_classes.js', false, SWCF_BUILD);
 
 		echo SWEETCF_Display::$add_date_js;
 
@@ -121,7 +121,7 @@ class SWEETCF_Utils {
 		//<![CDATA[
 			var swcf_css = "\n\
 		<style type='text/css'>\n\
-		@import url('<?php echo plugins_url('contact-form-sweet/date/ctf_epoch_styles.css') . '?ver=' . SWCF_BUILD; ?>');\n\
+		@import url('<?php echo SWCF_INCLUDES . '/ctf_epoch_styles.css' . '?ver=' . SWCF_BUILD; ?>');\n\
 		</style>\n\
 		";
 			jQuery(document).ready(function($) {
@@ -137,11 +137,11 @@ class SWEETCF_Utils {
 		// Add javascript and css 
 		if (isset(SWEETCF_Display::$add_swcf_script) && SWEETCF_Display::$add_swcf_script) {
 			wp_enqueue_script('jquery-ui-core');
-			wp_enqueue_script('sweetcf_scripts', plugins_url('contact-form-sweet/includes/sweetcf-scripts.js'), false, SWCF_BUILD);
+			wp_enqueue_script('sweetcf_scripts', SWCF_INCLUDES . '/sweetcf-scripts.js', false, SWCF_BUILD);
 		}
 		if (isset(SWEETCF_Display::$add_placeholder_script) && SWEETCF_Display::$add_placeholder_script) {
 			// makes placeholder work on old browsers
-			wp_enqueue_script('swcf_placeholders', plugins_url('contact-form-sweet/includes/sweetcf-placeholders.min.js'), false, SWCF_BUILD);
+			wp_enqueue_script('swcf_placeholders', SWCF_INCLUDES . '/sweetcf-placeholders.min.js', false, SWCF_BUILD);
 		}
 		if (isset(SWEETCF_Display::$add_date_js) && SWEETCF_Display::$add_date_js != '') {
 			// add js for forms with date fields
@@ -153,7 +153,7 @@ class SWEETCF_Utils {
 		// add placeholder javascript in form preview page only if needed
 		if (isset(SWEETCF_Display::$placeholder) && SWEETCF_Display::$placeholder) {
 			// makes placeholder work on old browsers
-			wp_enqueue_script('swcf_placeholders', plugins_url('contact-form-sweet/includes/sweetcf-placeholders.min.js'), false, SWCF_BUILD);
+			wp_enqueue_script('swcf_placeholders', SWCF_INCLUDES . '/sweetcf-placeholders.min.js', false, SWCF_BUILD);
 		}
 		if (isset(SWEETCF_Display::$add_date_js) && SWEETCF_Display::$add_date_js != '') {
 			// add js for forms with date fields

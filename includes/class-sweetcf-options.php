@@ -188,7 +188,7 @@ class SWEETCF_Options {
 				</form>
 			</div>
 			<div id="ctf-loading">
-			<?php echo '<img src="' . plugins_url('contact-form-sweet/includes/loading.gif') . '" width="32" height="32" alt="' . esc_attr(__('Loading...', 'sweetcontact')) . '" />';
+			<?php echo '<img src="' . SWCF_INCLUDES . '/loading.gif' . '" width="32" height="32" alt="' . esc_attr(__('Loading...', 'sweetcontact')) . '" />';
 			?></div>
 			<div class='swcf_clear'></div>
 
