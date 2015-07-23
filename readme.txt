@@ -97,6 +97,13 @@ Yes, this Contact Form is working on all mobile devices.
 
 On step 3 in the Contact Form settings page, you can enter the desire email where you will get the Contact Form submission
 
+= I'm not receiving messages from Contact Form OR The plugin does not send an email =
+
+Please follow the instructions below:
+
+1. Email messages can be marked as spam on the server. Please choose another email instead of the admin's one (step 3 in the Contact Form settings) - for example, gmail or similar. If the message is sent, it means that email filtering is set on your server. Please contact your hosting provider.
+
+
 = I have a problem with setting up the Contact Form, what to do? = 
 
 Drop us a mail at support@sweetcontactform.com 
