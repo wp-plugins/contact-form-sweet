@@ -1,7 +1,7 @@
-=== Contact Form by Sweet ===
+	=== Contact Form by Sweet ===
 Contributors: Sweet
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=97GRJSSY863JG
-Tags: admin, advanced form, Attachment, best contact form plugin, buddypress, category, cnotact, conact, contact, contact button, contact form, contact form builder, Contact Form Builder with recaptcha, contact form manager, contact form plugin, contact form with google map, contact forms, contact forms plugin, contact manager, contact me, contact us, contact us form, contacts, contacts form plugin, contatc, copy, custom form, email, email form, feedback, feedback form, feedback forms, form, forms, forms plugin, insert the shortcode, multiple contact forms, post feedback, request, send, send copy, send messages, shortcode, text, web form, web-page feedback, wordpress contact form
+Tags: admin, advanced form, Attachment, best contact form plugin, buddypress, category, cnotact, conact, contact, contact button, contact form, contact form builder, Contact Form Builder with recaptcha, contact form manager, contact form plugin, contact form with google map, contact forms, contact forms plugin, contact manager, contact me, contact us, contact us form, contacts, contacts form plugin, contatc, copy, custom form, email, email form, feedback, feedback form, feedback forms, form, forms, forms plugin, insert the shortcode, multiple contact forms, post feedback, request, send, send copy, send messages, shortcode, text, web form, web-page feedback, wordpress contact form, CAPTCHA, catcha 
 Requires at least: 3.3
 Tested up to: 4.2.2
 Stable tag: trunk
@@ -60,6 +60,21 @@ Please feel free to contact us at support support@sweetcontactform.com
 2. Activate the plugin using the 'Plugins' menu in your WordPress admin panel.
 3. You can adjust the necessary settings using your WordPress admin panel in "sweetContact" menu.
 4. Create a page or a post and insert the shortcode [sweetcontact-form form='1'] into a page or a post.
+
+== Other ==
+
+Some of our true believes: (we are aiming to get there ;-)
+
+* Contact Form should be simple
+
+* Contact Form should be easy to install
+
+* Contact Form should support all languages
+
+* Contact Form should support all CAPTCHA plugins
+
+* Contact Form should not conflict with other Contact Form plugins
+
 
 == Frequently Asked Questions ==
 
