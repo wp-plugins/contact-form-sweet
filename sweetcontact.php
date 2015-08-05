@@ -3,7 +3,7 @@
 Plugin Name: sweetContact Form
 Plugin URI: http://sweetcontactform.com
 Description: sweetContact Form for WordPress. Form builder to let your visitors send you emails.
-Version: 4.1.3
+Version: 4.1.4
 Author: Sweet
 Author URI: http://www.sweetcontactform.com
 License: GNU GPL2

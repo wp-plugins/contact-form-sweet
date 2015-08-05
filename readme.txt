@@ -1,7 +1,7 @@
 === Contact Form by Sweet ===
 Contributors: Sweet
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=97GRJSSY863JG
-Tags: admin, advanced form, Attachment, best contact form plugin, buddypress, category, cnotact, conact, contact, contact button, contact form, contact form builder, Contact Form Builder with recaptcha, contact form manager, contact form plugin, contact form with google map, contact forms, contact forms plugin, contact manager, contact me, contact us, contact us form, contacts, contacts form plugin, contatc, copy, custom form, email, email form, feedback, feedback form, feedback forms, form, forms, forms plugin, insert the shortcode, multiple contact forms, post feedback, request, send, send copy, send messages, shortcode, text, web form, web-page feedback, wordpress contact form
+Tags: best contact form plugin, contact, contact button, contact form, contact form builder, Contact Form Builder with recaptcha, contact form manager, contact form plugin, contact form with google map, contact forms, contact forms plugin, contact manager
 Requires at least: 3.3
 Tested up to: 4.2.2
 Stable tag: trunk
@@ -110,6 +110,9 @@ Drop us a mail at support@sweetcontactform.com
 4. Contact Form display.
 
 == Changelog ==
+
+= V4.1.4 =
+* Bug : had to update the code requested by WordPress team
 
 = V4.1.3 =
 * Bug : had to update the code requested by WordPress team
