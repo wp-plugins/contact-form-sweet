@@ -3,7 +3,7 @@
 Plugin Name: sweetContact Form
 Plugin URI: http://sweetcontactform.com
 Description: sweetContact Form for WordPress. Form builder to let your visitors send you emails.
-Version: 4.1.2
+Version: 4.1.3
 Author: Sweet
 Author URI: http://www.sweetcontactform.com
 License: GNU GPL2
@@ -42,7 +42,7 @@ define( 'SWCF_MESSAGE_FIELD', '4' );
 global $swcf_special_slugs;		// List of reserve slug names
 $swcf_special_slugs = array( 'f_name', 'm_name', 'mi_name', 'l_name', 'email2', 'mailto_id', 'subject_id' );
 
-require_once SWCF_PATH . 'sweetcaptcha.php';	
+require_once SWCF_PATH . 'captcha.php';	
 
 require_once SWCF_PATH . 'includes/class-sweetcf-utils.php';
 require_once SWCF_PATH . 'includes/class-sweetcf-display.php';
@@ -65,25 +65,25 @@ if (is_admin()) {
   // Add admin notices.
   add_action('admin_notices', 'sweetcontact_admin_notices');
   // add link to settings menu
-  //add_action('admin_menu', 'sweetcaptcha_admin_menu');
+  //add_action('admin_menu', 'captcha_admin_menu');
 } else {
 	add_action('wp_loaded', 'sweetcontact_plugins_loaded');
 }
 
 function sweetcontact_plugins_loaded() {
-	if ( defined('SWCF_SWEETCAPTCHA_PROBLEM') ) { return; }
-	define( 'SWCF_SWEETCAPTCHA_OK', (function_exists('sweetcontact_sweetcaptcha_is_registered') && sweetcontact_sweetcaptcha_is_registered()) );
-	$sweetcaptcha_problem = '';
-	if ( !SWCF_SWEETCAPTCHA_OK ) {
-		$sweetcaptcha_problem = SWCF_NOT_READY;
+	if ( defined('SWCF_CAPTCHA_PROBLEM') ) { return; }
+	define( 'SWCF_CAPTCHA_OK', (function_exists('sweetcontact_captcha_is_registered') && sweetcontact_captcha_is_registered()) );
+	$captcha_problem = '';
+	if ( !SWCF_CAPTCHA_OK ) {
+		$captcha_problem = SWCF_NOT_READY;
 	}
-	define( 'SWCF_SWEETCAPTCHA_PROBLEM', $sweetcaptcha_problem );
+	define( 'SWCF_CAPTCHA_PROBLEM', $captcha_problem );
 	
-	//echo '<hr>SWCF_SWEETCAPTCHA_PROBLEM: '.SWCF_SWEETCAPTCHA_PROBLEM.'<hr>';
+	//echo '<hr>SWCF_CAPTCHA_PROBLEM: '.SWCF_CAPTCHA_PROBLEM.'<hr>';
 	/*
-	if ( SWCF_SWEETCAPTCHA_PROBLEM ) {
+	if ( SWCF_CAPTCHA_PROBLEM ) {
 		wp_enqueue_style( 'wp-pointer' ); wp_enqueue_script( 'jquery-ui' ); wp_enqueue_script( 'wp-pointer' ); wp_enqueue_script( 'utils' );
-		SWEETCF_Utils::add_admin_notice('swcf-sweetcaptcha-problem',SWCF_SWEETCAPTCHA_PROBLEM, 'error ', 'color: red; font-size: 14px; font-weight: bold;	text-align: center;');
+		SWEETCF_Utils::add_admin_notice('swcf-captcha-problem',SWCF_CAPTCHA_PROBLEM, 'error ', 'color: red; font-size: 14px; font-weight: bold;	text-align: center;');
 		add_action('admin_notices', 'sweetcontact_popup_setup');
 	}
 	 * 
@@ -97,7 +97,7 @@ function sweetcontact_init() {
 	require_once ABSPATH . 'wp-admin/includes/plugin.php';
 	$plugin_info = get_plugin_data(__FILE__);
 	$ver = $plugin_info["Version"];
-	$app_id = get_option(SWCF_SWEETCAPTCHA_APP_ID) ? get_option(SWCF_SWEETCAPTCHA_APP_ID) : '1';
-	wp_enqueue_script('fullcontactform-csrf', 'https://www.sweetcaptcha.com/api/v2/apps/csrf/' . $app_id, array(), $ver, true);
+	$app_id = get_option(SWCF_CAPTCHA_APP_ID) ? get_option(SWCF_CAPTCHA_APP_ID) : '1';
+	//wp_enqueue_script('fullcontactform-csrf', 'https://www.sweetcontactform.com' . $app_id, array(), $ver, true);
 }
 ?>

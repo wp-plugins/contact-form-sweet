@@ -894,7 +894,7 @@ class SWEETCF_Process {
 	}
 
 	static function check_captcha() { // Captcha check if enabled
-		global $swcf_sweetcaptcha_instance;
+		global $swcf_captcha_instance;
 		if (SWEETCF_Display::is_captcha_enabled(self::$form_id_num)) {
 			if (isset($_POST['captcha_code'])) { // Regular captcha
 				$captcha_code = SWEETCF_Utils::clean_input($_POST['captcha_code']);
@@ -947,16 +947,16 @@ class SWEETCF_Process {
 					}
 				}
 			} else { // Sweet Captcha
-				if ( !defined('SWCF_SWEETCAPTCHA_OK') ) { sweetcontact_plugins_loaded(); }
-				/*if ( SWCF_SWEETCAPTCHA_OK ) {
+				if ( !defined('SWCF_CAPTCHA_OK') ) { sweetcontact_plugins_loaded(); }
+				/*if ( SWCF_CAPTCHA_OK ) {
 					$res = array (
 						'sckey' => ( isset($_POST['sckey']) ? $_POST['sckey'] : '' ),
 						'scvalue' => ( isset($_POST['scvalue']) ? $_POST['scvalue'] : '' )
 					);
-					initSweetCaptchaInstance();
-					if ( $swcf_sweetcaptcha_instance->registered ) {
-						if ( $swcf_sweetcaptcha_instance->check( $res ) != 'true' ) {
-							self::$form_errors['captcha'] = '<strong>'.__( 'ERROR', 'sweetcaptcha' ) . '</strong>: ' . __(SWCF_SWEETCAPTCHA_ERROR_MESSAGE_BR, 'sweetcaptcha' );
+					initCaptchaInstance();
+					if ( $swcf_captcha_instance->registered ) {
+						if ( $swcf_captcha_instance->check( $res ) != 'true' ) {
+							self::$form_errors['captcha'] = '<strong>'.__( 'ERROR', 'captcha' ) . '</strong>: ' . __(SWCF_CAPTCHA_ERROR_MESSAGE_BR, 'captcha' );
 						}
 					}
 				}*/

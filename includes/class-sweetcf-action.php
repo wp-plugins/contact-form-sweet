@@ -210,24 +210,24 @@ class SWEETCF_Action {
 							?></strong></p>
 					<?php if ($result != true) { ?>
 						<p><?php _e('The result was:', 'sweetcontact'); ?></p>
-						<?php echo '<p><a href="http://sweetcaptcha.com/email-does-not-send">' . __('See FAQ', 'sweetcontact') . '</a></p>'; ?>
+						<?php /*echo '<p><a href="http://www.sweetcontactform.com/email-does-not-send">' . __('See FAQ', 'sweetcontact') . '</a></p>'; */?>
 						<pre><?php esc_html(var_dump($result)); ?></pre>
 						<?php
 						if (SWEETCF_Options::$form_options['php_mailer_enable'] == 'wordpress') {
 							?>
 							<p><?php _e('The full debugging output is shown below:', 'sweetcontact'); ?></p>
-							<?php echo '<p><a href="http://sweetcaptcha.com/email-does-not-send">' . __('See FAQ', 'sweetcontact') . '</a></p>'; ?>
+							<?php /*echo '<p><a href="http://www.sweetcontactform.com/email-does-not-send">' . __('See FAQ', 'sweetcontact') . '</a></p>'; */?>
 							<pre><?php esc_html(var_dump($phpmailer)); ?></pre>
 							<?php
 						}
 					} else {
 						echo '<p>' . _e('Be sure to check your email to see if you received it.', 'sweetcontact') . '</p>';
-						echo '<p><a href="http://sweetcaptcha.com/email-does-not-send">' . __('See FAQ', 'sweetcontact') . '</a></p>';
+						/*echo '<p><a href="http://www.sweetcontactform.com/email-does-not-send">' . __('See FAQ', 'sweetcontact') . '</a></p>';*/
 					}
 					if ($smtp_debug != '') {
 						?>
 						<p><?php _e('The Email debugging output is shown below:', 'sweetcontact'); ?></p>
-						<?php echo '<p><a href="http://sweetcaptcha.com/email-does-not-send">' . __('See FAQ', 'sweetcontact') . '</a></p>'; ?>
+						<?php /*echo '<p><a href="http://www.sweetcontactform.com/email-does-not-send">' . __('See FAQ', 'sweetcontact') . '</a></p>';*/ ?>
 						<pre><?php echo esc_html($smtp_debug) ?></pre>
 						<?php
 					}

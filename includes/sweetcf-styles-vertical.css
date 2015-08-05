@@ -8,26 +8,26 @@
 	width: 350px !important;
 }
 /*
-div.sweetcaptcha {
+div.captcha {
 	border: 1px solid #e2e2e2;
 	max-width: 228px;
 	position: relative;
 }
-div.sweetcaptcha .reset {
+div.captcha .reset {
 	padding-bottom: 8px;
 }
-div.sweetcaptcha span.holder {
+div.captcha span.holder {
 	float: none;
 	width: auto;
 	background-position: center center !important;
 }
-div.sweetcaptcha ul {
+div.captcha ul {
 	display: block;
 	position: relative;
 }
-div.sweetcaptcha ul li img {
+div.captcha ul li img {
 }
-div.sweetcaptcha ul li {
+div.captcha ul li {
 }
 .sweetontact-form-fields-wrapper {
 	

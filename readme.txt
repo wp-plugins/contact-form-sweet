@@ -1,9 +1,9 @@
-	=== Contact Form by Sweet ===
+=== Contact Form by Sweet ===
 Contributors: Sweet
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=97GRJSSY863JG
-Tags: admin, advanced form, Attachment, best contact form plugin, buddypress, category, cnotact, conact, contact, contact button, contact form, contact form builder, Contact Form Builder with recaptcha, contact form manager, contact form plugin, contact form with google map, contact forms, contact forms plugin, contact manager, contact me, contact us, contact us form, contacts, contacts form plugin, contatc, copy, custom form, email, email form, feedback, feedback form, feedback forms, form, forms, forms plugin, insert the shortcode, multiple contact forms, post feedback, request, send, send copy, send messages, shortcode, text, web form, web-page feedback, wordpress contact form, CAPTCHA, catcha 
+Tags: admin, advanced form, Attachment, best contact form plugin, buddypress, category, cnotact, conact, contact, contact button, contact form, contact form builder, Contact Form Builder with recaptcha, contact form manager, contact form plugin, contact form with google map, contact forms, contact forms plugin, contact manager, contact me, contact us, contact us form, contacts, contacts form plugin, contatc, copy, custom form, email, email form, feedback, feedback form, feedback forms, form, forms, forms plugin, insert the shortcode, multiple contact forms, post feedback, request, send, send copy, send messages, shortcode, text, web form, web-page feedback, wordpress contact form
 Requires at least: 3.3
-Tested up to: 4.2.3
+Tested up to: 4.2.2
 Stable tag: trunk
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -61,21 +61,6 @@ Please feel free to contact us at support support@sweetcontactform.com
 3. You can adjust the necessary settings using your WordPress admin panel in "sweetContact" menu.
 4. Create a page or a post and insert the shortcode [sweetcontact-form form='1'] into a page or a post.
 
-== Other ==
-
-Some of our true believes: (we are aiming to get there ;-)
-
-* Contact Form should be simple
-
-* Contact Form should be easy to install
-
-* Contact Form should support all languages
-
-* Contact Form should support all CAPTCHA plugins
-
-* Contact Form should not conflict with other Contact Form plugins
-
-
 == Frequently Asked Questions ==
 
 = How fast can I setup a Contact Form with this plguin =
@@ -112,13 +97,6 @@ Yes, this Contact Form is working on all mobile devices.
 
 On step 3 in the Contact Form settings page, you can enter the desire email where you will get the Contact Form submission
 
-= I'm not receiving messages from Contact Form OR The plugin does not send an email =
-
-Please follow the instructions below:
-
-1. Email messages can be marked as spam on the server. Please choose another email instead of the admin's one (step 3 in the Contact Form settings) - for example, gmail or similar. If the message is sent, it means that email filtering is set on your server. Please contact your hosting provider.
-
-
 = I have a problem with setting up the Contact Form, what to do? = 
 
 Drop us a mail at support@sweetcontactform.com 
@@ -132,6 +110,9 @@ Drop us a mail at support@sweetcontactform.com
 4. Contact Form display.
 
 == Changelog ==
+
+= V4.1.3 =
+* Bug : had to update the code requested by WordPress team
 
 = V4.1.2 =
 * Bug : internal bug, logger didn't updated the last_active_at

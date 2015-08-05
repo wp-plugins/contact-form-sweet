@@ -117,7 +117,7 @@ class SWEETCF_Options {
 
 	static function display_options() {
 		
-		//echo 'initSweetCaptchaInstance count: '; var_export($_REQUEST['initSweetCaptchaInstance']);echo '<br>'; 
+		//echo 'initCaptchaInstance count: '; var_export($_REQUEST['initCaptchaInstance']);echo '<br>'; 
 		//var_export($_REQUEST['submit_register_form']);
 
 		$form_num = self::$current_form;
@@ -272,7 +272,7 @@ class SWEETCF_Options {
 	}
 
 	static function settings_email_callback() { 
-		global $wpdb, $current_user, $swcf_sweetcaptcha_instance; 
+		global $wpdb, $current_user, $swcf_captcha_instance; 
 		if (!self::$global_options) {	self::$global_options = SWEETCF_Utils::get_global_options(); }
 		?>
 		<div class="clear"></div>
@@ -309,9 +309,9 @@ class SWEETCF_Options {
 			if ( empty($ctf_contacts_error_message) ) {
 				if (self::$form_options['captcha_enable'] != 'false') {
 					if ( isset( $_REQUEST['settings-updated'] ) && ($_REQUEST['settings-updated'] == 'true') ) {
-						initSweetCaptchaInstance();
-						if ( !$swcf_sweetcaptcha_instance->registered ) {
-							echo "<div class='swcf-error'>".__('Error registering sweetContact: ', 'sweetcontact').$swcf_sweetcaptcha_instance->error."</div>\n";
+						initCaptchaInstance();
+						if ( 0 ) {
+							echo "<div class='swcf-error'>".__('Error registering sweetContact: ', 'sweetcontact').$swcf_captcha_instance->error."</div>\n";
 						}
 					}
 				}
@@ -328,7 +328,7 @@ class SWEETCF_Options {
 			<input type="radio" name="email_to" id="sw_contact_wpuser" value="user" <?php if ($option_email_to != 'custom') echo "checked=\"checked\" "; ?>/>
 			<label style="width:135px;" for="sw_contact_wpuser"><?php _e('WordPress User', 'sweetcontact'); ?></label>
       <select name="wp_user" style="width:180px;">
-          <!--<option disabled><?php //_e("Select user name", 'sweetcaptcha'); ?></option>-->
+          <!--<option disabled><?php //_e("Select user name", 'captcha'); ?></option>-->
           <?php	foreach ($users as $user) { ?>
             <option value="<?php echo $user->ID; ?>" 
               <?php if ($wp_user == $user->ID) echo "selected=\"selected\" "; ?>><?php echo $user->user_login; ?>
@@ -747,10 +747,10 @@ class SWEETCF_Options {
 			<div class="clear"></div>
 			<fieldset class="swcf_settings_group">
 				<!--
-				<input onclick="jQuery('#sweetcaptcha-settings').show();" name="<?php //echo self::$form_option_name; ?>[captcha_enable]" id="sw_contact_captcha_enable" type="radio" <?php //if (self::$form_options['captcha_enable'] != '0') echo ' checked="checked" '; ?> value="1" />
-				<label for="sw_contact_captcha_enable"><?php //_e('Use sweetCaptcha', 'sweetcontact'); ?></label>
+				<input onclick="jQuery('#captcha-settings').show();" name="<?php //echo self::$form_option_name; ?>[captcha_enable]" id="sw_contact_captcha_enable" type="radio" <?php //if (self::$form_options['captcha_enable'] != '0') echo ' checked="checked" '; ?> value="1" />
+				<label for="sw_contact_captcha_enable"><?php //_e('Use Captcha', 'sweetcontact'); ?></label>
 				<br/>
-				<input onclick="jQuery('#sweetcaptcha-settings').hide();" name="<?php //echo self::$form_option_name; ?>[captcha_enable]" id="sw_contact_captcha_invisible" type="radio" <?php //if (self::$form_options['captcha_enable'] == '0') echo ' checked="checked" '; ?> value="0" />
+				<input onclick="jQuery('#captcha-settings').hide();" name="<?php //echo self::$form_option_name; ?>[captcha_enable]" id="sw_contact_captcha_invisible" type="radio" <?php //if (self::$form_options['captcha_enable'] == '0') echo ' checked="checked" '; ?> value="0" />
 				<label for="sw_contact_captcha_invisible"><?php //_e('invisible CAPTCHA', 'sweetcontact'); ?></label>
 				<a style="cursor:pointer;" title="<?php //esc_attr_e('Click for Help!', 'sweetcontact'); ?>" onclick="toggleVisibility('sw_contact_captcha_enable_tip');"><?php //_e('help', 'sweetcontact'); ?></a>
 				<div class="swcf_tip" id="sw_contact_captcha_enable_tip">
@@ -758,9 +758,9 @@ class SWEETCF_Options {
 				</div>
 				<br />
 				-->
-				<input value="1" onclick="jQuery('#sweetcaptcha-settings').toggle();" name="<?php echo self::$form_option_name; ?>[captcha_enable]" 
+				<input value="1" onclick="jQuery('#captcha-settings').toggle();" name="<?php echo self::$form_option_name; ?>[captcha_enable]" 
 							 id="sw_contact_captcha_enable" type="checkbox" <?php if (self::$form_options['captcha_enable'] != 'false') echo ' checked="checked" '; ?> />
-				<label for="sw_contact_captcha_enable"><?php _e('Use sweetCaptcha', 'sweetcontact'); ?></label>
+				<label for="sw_contact_captcha_enable"><?php _e('Use Captcha', 'sweetcontact'); ?></label>
 				<!--
 				<input name="<?php //echo self::$form_option_name; ?>[captcha_perm]" id="sw_contact_captcha_perm" type="checkbox" <?php //if (self::$form_options['captcha_perm'] == 'true') echo 'checked="checked"'; ?> value="true" />
 				<label for="<?php //echo self::$form_option_name; ?>[captcha_perm]"><?php //_e('Hide CAPTCHA for', 'sweetcontact'); ?>
@@ -768,11 +768,11 @@ class SWEETCF_Options {
 			<?php //self::sw_contact_captcha_perm_dropdown(self::$form_option_name . '[captcha_perm_level]', self::$form_options['captcha_perm_level']); ?>
 				<br />
 				-->
-				<div id="sweetcaptcha-settings" style="margin: 10px 0px 0px 10px;<?php echo (self::$form_options['captcha_enable'] == '1') ? '' : 'display: none;'; ?>">
-				<?php $sweetcaptcha_is_registered = function_exists('sweetcontact_sweetcaptcha_is_registered') && sweetcontact_sweetcaptcha_is_registered(); ?>
-				<?php if ( $sweetcaptcha_is_registered ) { ?>
+				<div id="captcha-settings" style="margin: 10px 0px 0px 10px;<?php echo (self::$form_options['captcha_enable'] == '1') ? '' : 'display: none;'; ?>">
+				<?php $captcha_is_registered = function_exists('sweetcontact_captcha_is_registered') && sweetcontact_captcha_is_registered(); ?>
+				<?php if ( $captcha_is_registered && 0) { ?>
 					<div style="padding: 0;">
-          <a href="https://www.sweetcaptcha.com/accounts/signin?ref=sweetcontact" target="_blank" style="font-weight: bold"><?php _e('Log in', 'sweetcontact')?></a> <?php _e('to your sweetCaptcha account for changing your language, design and additional settings', 'sweetcontact')?>
+          <a href="https://www.sweetcontactform.com/accounts/signin?ref=sweetcontact" target="_blank" style="font-weight: bold"><?php _e('Log in', 'sweetcontact')?></a> <?php _e('to your Captcha account for changing your language, design and additional settings', 'sweetcontact')?>
           <div style="color: #999;"><?php _e('Your password was sent to you in your welcome email', 'sweetcontact')?></div>
 					</div>
 				<?php } else if ( 0 ) { 

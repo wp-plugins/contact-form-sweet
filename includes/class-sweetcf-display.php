@@ -58,7 +58,6 @@ class SWEETCF_Display {
 		SWEETCF_Utils::update_lang(self::$form_options);
 
 		// Store shortcode atts
-		// http://sweetcaptcha.com/shortcode-options
 		if (self::$global_options['enable_php_sessions'] == 'true') { // this feature only works when PHP sessions are enabled
 			$_SESSION["fsc_shortcode_redirect_$frm_id"] = $redirect;
 			$_SESSION["fsc_shortcode_hidden_$frm_id"] = $hidden;
@@ -107,7 +106,7 @@ class SWEETCF_Display {
 			}
 			// ***** Display the Form *****
 			self::$placeholder = 0;
-			$string = "\n\n<!-- sweetContact Form plugin " . SWCF_VERSION . " - begin - sweetcaptcha.com -->
+			$string = "\n\n<!-- sweetContact Form plugin " . SWCF_VERSION . " - begin -->
 <div " . self::get_this_css('clear_style') . "></div>\n" . self::$form_options['welcome'];
 			$string = self::display_form($string);
 		}
@@ -587,7 +586,7 @@ class SWEETCF_Display {
 ';
 		}
 
-		$string .= "\n" . '<!-- sweetContact Form plugin ' . SWCF_VERSION . ' - end - sweetcaptcha.com -->' . "\n";
+		$string .= "\n" . '<!-- sweetContact Form plugin ' . SWCF_VERSION . ' - end -->' . "\n";
 
 		return($string);
 	}
@@ -1544,7 +1543,7 @@ class SWEETCF_Display {
 
 	static function display_captcha() {	// this function adds the captcha to the contact form
 		$html = '';
-		if ( SWCF_SWEETCAPTCHA_OK ) {
+		if ( SWCF_CAPTCHA_OK ) {
 			if ( is_admin() ) {
 				self::$contacts = (self::$contacts) ? self::$contacts : SWEETCF_Options::get_contact_list();
 				$email_to = self::$contacts[0]['EMAIL'];
@@ -1557,13 +1556,13 @@ class SWEETCF_Display {
 				//$html .= (self::$form_options['captcha_small'] == 'true') ? self::get_this_css('captcha_div_style_sm') : self::get_this_css('captcha_div_style_m');
 				$html .= ' />' . "\n";
 			}
-			if ( function_exists('sweetcontact_sweetcaptcha_shortcode') ) {
+			if ( function_exists('sweetcontact_captcha_shortcode') ) {
 				$html .= self::echo_if_error('captcha');
-				$html .= sweetcontact_sweetcaptcha_shortcode();
+				$html .= sweetcontact_captcha_shortcode();
 				$html .= "\n</div>";
 			}
 		} else {
-			//SWEETCF_Display::set_form_error('captcha', SWCF_SWEETCAPTCHA_PROBLEM);
+			//SWEETCF_Display::set_form_error('captcha', SWCF_CAPTCHA_PROBLEM);
 			$html .= self::echo_if_error('captcha');
 		}
 
@@ -1573,7 +1572,7 @@ class SWEETCF_Display {
 	static function display_thank_you() {
 		// Displays thank you message upon successful form submission
 		$ctf_form_style = SWEETCF_Display::get_this_css('form_style');
-		$ctf_thank_you = '<!-- sweetContact Form plugin ' . esc_html(SWCF_VERSION) . ' - begin - sweetcaptcha.com --><div id="SWCFContact' . self::$form_id_num . '" ' . $ctf_form_style . '>';
+		$ctf_thank_you = '<!-- sweetContact Form plugin ' . esc_html(SWCF_VERSION) . ' - begin --><div id="SWCFContact' . self::$form_id_num . '" ' . $ctf_form_style . '>';
 		if (self::$form_options['border_enable'] == 'true') {
 			$ctf_thank_you .= '<fieldset id="swcf_form_fieldset' . self::$form_id_num . '" ' . SWEETCF_Display::get_this_css('border_style') . '>';
 			if (self::$form_options['title_border'] != '') {
@@ -1654,7 +1653,7 @@ newwin.document.close()
 			$ctf_thank_you .= '
 	</fieldset>';
 		}
-		$ctf_thank_you .= '</div><!-- sweetContact Form plugin ' . esc_html(SWCF_VERSION) . ' - end - sweetcaptcha.com -->';
+		$ctf_thank_you .= '</div><!-- sweetContact Form plugin ' . esc_html(SWCF_VERSION) . ' - end -->';
 
 		//filter hook for thank_you_message
 		return apply_filters('sw_contact_thank_you_message', $ctf_thank_you, self::$form_id_num);
